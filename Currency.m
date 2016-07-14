@@ -8,6 +8,8 @@
 
 #import "Currency.h"
 
+NSMutableArray* _secretListOfCurrencies;
+
 @implementation Currency
 
 @synthesize name;
@@ -49,5 +51,24 @@
   
 }
 
++(NSArray*) allCurrencies{
+ 
+  if( _secretListOfCurrencies == nil ){
+    _secretListOfCurrencies = [[NSMutableArray alloc] init];
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"US Dollar"
+                                                             alphaCode:@"USD"
+                                                                symbol:@"$"
+                                                         decimalPlaces:2 ]];
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Yen"
+                                                             alphaCode:@"JPY"
+                                                                symbol:@"¥"
+                                                         decimalPlaces:0 ]];
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Euro"
+                                                             alphaCode:@"EUR"
+                                                                symbol:@"$"
+                                                         decimalPlaces:2 ]];
+  }
+  return (NSArray*)_secretListOfCurrencies;
+}
 
 @end

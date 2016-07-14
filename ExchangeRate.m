@@ -30,6 +30,7 @@
     self.foreign = aForeign;
     self.completionHandlerDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
     self.ephemeralConfigObject = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+  [self fetch];
   }
   return self;
 }
@@ -86,6 +87,7 @@
 
 -(void) fetch
 {
+  //call this method inside the init of the exchangeRate
   NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
   NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: self.ephemeralConfigObject delegate: nil delegateQueue: mainQueue];
   

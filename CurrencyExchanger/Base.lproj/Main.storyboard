@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="42" y="77" width="97" height="30"/>
+                                    <rect key="frame" x="42" y="77" width="101" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oe-2u-9Ff">
@@ -36,24 +36,25 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDN-y1-FVx">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Exchange"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="72" width="67" height="30"/>
+                                    <rect key="frame" x="167" y="68" width="84" height="48"/>
                                 </variation>
                                 <connections>
                                     <action selector="exchangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KD8-jA-uLS"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ud-NY-fYJ">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-wp-Q3P">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="233" y="122" width="132" height="80"/>
+                                    <rect key="frame" x="229" y="136" width="141" height="121"/>
                                 </variation>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sb1-Br-WSq">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="17" y="130" width="146" height="64"/>
+                                    <rect key="frame" x="22" y="136" width="141" height="121"/>
                                 </variation>
                             </pickerView>
                         </subviews>
@@ -63,7 +64,7 @@
                                 <exclude reference="SO7-x1-C5l"/>
                                 <exclude reference="9Oe-2u-9Ff"/>
                                 <exclude reference="YDN-y1-FVx"/>
-                                <exclude reference="2Ud-NY-fYJ"/>
+                                <exclude reference="g0l-wp-Q3P"/>
                                 <exclude reference="sb1-Br-WSq"/>
                             </mask>
                         </variation>
@@ -72,16 +73,16 @@
                                 <include reference="SO7-x1-C5l"/>
                                 <include reference="9Oe-2u-9Ff"/>
                                 <include reference="YDN-y1-FVx"/>
-                                <include reference="2Ud-NY-fYJ"/>
+                                <include reference="g0l-wp-Q3P"/>
                                 <include reference="sb1-Br-WSq"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="foreignCurrencyPicker" destination="2Ud-NY-fYJ" id="yco-hG-BDM"/>
+                        <outlet property="foreignCurrencyPicker" destination="g0l-wp-Q3P" id="KTw-j9-mIY"/>
                         <outlet property="foreignCurrencylabel" destination="9Oe-2u-9Ff" id="2pN-JA-fAA"/>
                         <outlet property="homeCurrencyField" destination="SO7-x1-C5l" id="hsX-8f-wGJ"/>
-                        <outlet property="homeCurrencyPicker" destination="sb1-Br-WSq" id="DuR-H9-roU"/>
+                        <outlet property="homeCurrencyPicker" destination="sb1-Br-WSq" id="hg6-OF-ySH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -24,6 +24,7 @@
             decimalPlaces: (NSUInteger)places;
 
 -(NSString*) format:(NSNumber*) quantity;
++(NSArray*) allCurrencies;
 
 
 @end
