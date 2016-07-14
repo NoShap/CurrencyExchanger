@@ -13,6 +13,8 @@
 		6E82862F1D36877700AD27EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E82862D1D36877700AD27EF /* Main.storyboard */; };
 		6E8286311D36877700AD27EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E8286301D36877700AD27EF /* Assets.xcassets */; };
 		6E8286341D36877700AD27EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8286321D36877700AD27EF /* LaunchScreen.storyboard */; };
+		6E82863D1D3687C200AD27EF /* ExchangeRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E82863C1D3687C200AD27EF /* ExchangeRate.m */; };
+		6E8286401D3692D800AD27EF /* Currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E82863F1D3692D800AD27EF /* Currency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		6E8286301D36877700AD27EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E8286331D36877700AD27EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E8286351D36877700AD27EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E82863B1D3687C200AD27EF /* ExchangeRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExchangeRate.h; path = ../ExchangeRate.h; sourceTree = "<group>"; };
+		6E82863C1D3687C200AD27EF /* ExchangeRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExchangeRate.m; path = ../ExchangeRate.m; sourceTree = "<group>"; };
+		6E82863E1D3692D800AD27EF /* Currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Currency.h; path = ../Currency.h; sourceTree = "<group>"; };
+		6E82863F1D3692D800AD27EF /* Currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Currency.m; path = ../Currency.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				6E8286281D36877700AD27EF /* AppDelegate.m */,
 				6E82862A1D36877700AD27EF /* ViewController.h */,
 				6E82862B1D36877700AD27EF /* ViewController.m */,
+				6E82863B1D3687C200AD27EF /* ExchangeRate.h */,
+				6E82863C1D3687C200AD27EF /* ExchangeRate.m */,
+				6E82863E1D3692D800AD27EF /* Currency.h */,
+				6E82863F1D3692D800AD27EF /* Currency.m */,
 				6E82862D1D36877700AD27EF /* Main.storyboard */,
 				6E8286301D36877700AD27EF /* Assets.xcassets */,
 				6E8286321D36877700AD27EF /* LaunchScreen.storyboard */,
@@ -149,9 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E82863D1D3687C200AD27EF /* ExchangeRate.m in Sources */,
 				6E82862C1D36877700AD27EF /* ViewController.m in Sources */,
 				6E8286291D36877700AD27EF /* AppDelegate.m in Sources */,
 				6E8286261D36877700AD27EF /* main.m in Sources */,
+				6E8286401D3692D800AD27EF /* Currency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +312,7 @@
 				6E82863A1D36877700AD27EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
