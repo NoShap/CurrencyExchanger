@@ -32,10 +32,10 @@
     self.symbol = aSymbol;
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.maximumFractionDigits = places;
-    //how do I initiatilize the formatter so that it includes the decimal places?
-    //currency symbol
-    //round up
-    //currency style
+    [self.formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
+    [self.formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
+    self.formatter.currencySymbol = [NSString stringWithFormat: @"%@", self.symbol];
+    //currency style?
   }
   return self;
 }
@@ -44,8 +44,8 @@
 -(NSString*) format:(NSNumber*) quantity
 {
   
- //still need to learn how to use the NSFormatter to do this part of the code.
-  return @"";
+  NSString* formattedNumber = [self.formatter stringFromNumber: quantity];
+  return formattedNumber;
   
 }
 

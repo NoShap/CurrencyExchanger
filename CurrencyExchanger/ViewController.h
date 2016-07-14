@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *homeCurrencyField;
+
+- (IBAction)exchangeButton:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *foreignCurrencylabel;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *homeCurrencyPicker;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *foreignCurrencyPicker;
 
 @end
 

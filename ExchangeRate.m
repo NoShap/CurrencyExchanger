@@ -51,13 +51,23 @@
 
 -(NSString*) exchangeToHome: (NSNumber*) value
 {
+  int rate = [self.theRate intValue];
+  int val = [value intValue];
+  int result = val / rate;
+  NSString* exchangedCurrency = [NSString stringWithFormat:@"%i",result];
+  return exchangedCurrency;
   return @"";
 }
 
 
 -(NSString*) exchangeToForeign: (NSNumber*) value
 {
-  return @"";
+  //WHY DO WE USE NSNUMBERS IF THEY ARE THE WORST THINGS IN EXISTENCE
+ int rate = [self.theRate intValue];
+ int val = [value intValue];
+ int result = val * rate ;
+ NSString* exchangedCurrency = [NSString stringWithFormat:@"%i",result];
+  return exchangedCurrency;
 }
 
 
