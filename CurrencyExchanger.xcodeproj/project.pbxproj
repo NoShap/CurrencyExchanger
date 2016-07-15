@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E27A4001D393E9000BE228F /* GoldCoinPile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E27A3FF1D393E9000BE228F /* GoldCoinPile.jpg */; };
 		6E8286261D36877700AD27EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8286251D36877700AD27EF /* main.m */; };
 		6E8286291D36877700AD27EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8286281D36877700AD27EF /* AppDelegate.m */; };
 		6E82862C1D36877700AD27EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E82862B1D36877700AD27EF /* ViewController.m */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E27A3FF1D393E9000BE228F /* GoldCoinPile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GoldCoinPile.jpg; sourceTree = "<group>"; };
 		6E8286211D36877600AD27EF /* CurrencyExchanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8286251D36877700AD27EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E8286271D36877700AD27EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				6E82862B1D36877700AD27EF /* ViewController.m */,
 				6E82863B1D3687C200AD27EF /* ExchangeRate.h */,
 				6E82863C1D3687C200AD27EF /* ExchangeRate.m */,
+				6E27A3FF1D393E9000BE228F /* GoldCoinPile.jpg */,
 				6E82863E1D3692D800AD27EF /* Currency.h */,
 				6E82863F1D3692D800AD27EF /* Currency.m */,
 				6E82862D1D36877700AD27EF /* Main.storyboard */,
@@ -146,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E27A4001D393E9000BE228F /* GoldCoinPile.jpg in Resources */,
 				6E8286341D36877700AD27EF /* LaunchScreen.storyboard in Resources */,
 				6E8286311D36877700AD27EF /* Assets.xcassets in Resources */,
 				6E82862F1D36877700AD27EF /* Main.storyboard in Resources */,

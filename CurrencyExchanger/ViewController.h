@@ -25,5 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *foreignCurrencyPicker;
 
+@property (weak, nonatomic) IBOutlet UILabel *exchangeRateLabel;
+
 @end
 

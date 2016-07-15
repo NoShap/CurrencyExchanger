@@ -28,6 +28,7 @@
   self.homeCurrencyPicker.delegate = self;
   self.foreignCurrencyPicker.dataSource = self;
   self.foreignCurrencyPicker.delegate = self;
+  
 }
 
 
@@ -64,7 +65,8 @@
   self.currentExchangeRate = [[ExchangeRate alloc] initWithHome: [self.pickerViewData objectAtIndex:[self.homeCurrencyPicker selectedRowInComponent:0]]
                                                              foreign: [self.pickerViewData objectAtIndex:[self.foreignCurrencyPicker selectedRowInComponent:0]]];
   
-  NSLog(@"your Exchange Rate is: %@", self.currentExchangeRate.name);
+  
+  
 }
 
 - (IBAction)exchangeButton:(id)sender
@@ -79,6 +81,10 @@
   self.foreignCurrencylabel.text = foreignCurrencyText;
   NSLog(@"The Exchange Button Works;");
   NSLog(@"foreign currency text %@", foreignCurrencyText);
+  
+  NSNumber *r = self.currentExchangeRate.theRate;
+  NSLog(@"your Exchange Rate is: %@", self.currentExchangeRate.name);
+  self.exchangeRateLabel.text =[NSString stringWithFormat:@"There are %@ %@ for every %@",r, self.currentExchangeRate.foreign.name, self.currentExchangeRate.home.name];
 
 }
 

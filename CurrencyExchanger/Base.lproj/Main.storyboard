@@ -17,21 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoinPile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MU8-zj-EGx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="229" width="367" height="423"/>
+                                </variation>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SO7-x1-C5l">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="42" y="77" width="101" height="30"/>
+                                    <rect key="frame" x="2" y="86" width="157" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Oe-2u-9Ff">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="259" y="77" width="80" height="30"/>
+                                    <rect key="frame" x="259" y="86" width="141" height="30"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDN-y1-FVx">
@@ -39,7 +45,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Exchange"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="68" width="84" height="48"/>
+                                    <rect key="frame" x="167" y="72" width="84" height="48"/>
                                 </variation>
                                 <connections>
                                     <action selector="exchangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KD8-jA-uLS"/>
@@ -47,38 +53,54 @@
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-wp-Q3P">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.13263461762781303" blue="0.065940985177892819" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="229" y="136" width="141" height="121"/>
+                                    <rect key="frame" x="259" y="200" width="141" height="121"/>
                                 </variation>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sb1-Br-WSq">
                                 <rect key="frame" x="0.0" y="-216" width="320" height="216"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="22" y="136" width="141" height="121"/>
+                                    <rect key="frame" x="2" y="200" width="141" height="121"/>
                                 </variation>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tS-7v-gHi">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="33" y="144" width="347" height="42"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="MU8-zj-EGx"/>
                                 <exclude reference="SO7-x1-C5l"/>
                                 <exclude reference="9Oe-2u-9Ff"/>
                                 <exclude reference="YDN-y1-FVx"/>
                                 <exclude reference="g0l-wp-Q3P"/>
                                 <exclude reference="sb1-Br-WSq"/>
+                                <exclude reference="6tS-7v-gHi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="MU8-zj-EGx"/>
                                 <include reference="SO7-x1-C5l"/>
                                 <include reference="9Oe-2u-9Ff"/>
                                 <include reference="YDN-y1-FVx"/>
                                 <include reference="g0l-wp-Q3P"/>
                                 <include reference="sb1-Br-WSq"/>
+                                <include reference="6tS-7v-gHi"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="exchangeRateLabel" destination="6tS-7v-gHi" id="vQz-Dx-t1e"/>
                         <outlet property="foreignCurrencyPicker" destination="g0l-wp-Q3P" id="KTw-j9-mIY"/>
                         <outlet property="foreignCurrencylabel" destination="9Oe-2u-9Ff" id="2pN-JA-fAA"/>
                         <outlet property="homeCurrencyField" destination="SO7-x1-C5l" id="hsX-8f-wGJ"/>
@@ -87,7 +109,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378" y="312"/>
+            <point key="canvasLocation" x="324" y="386"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="GoldCoinPile.jpg" width="261" height="193"/>
+    </resources>
 </document>

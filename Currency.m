@@ -56,7 +56,7 @@ NSMutableArray* _secretListOfCurrencies;
  
   if( _secretListOfCurrencies == nil ){
     _secretListOfCurrencies = [[NSMutableArray alloc] init];
-    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"US Dollar"
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"US Dollar(s)"
                                                              alphaCode:@"USD"
                                                                 symbol:@"$"
                                                          decimalPlaces:2 ]];
@@ -64,9 +64,17 @@ NSMutableArray* _secretListOfCurrencies;
                                                              alphaCode:@"JPY"
                                                                 symbol:@"¥"
                                                          decimalPlaces:0 ]];
-    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Euro"
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Euro(s)"
                                                              alphaCode:@"EUR"
                                                                 symbol:@"€"
+                                                         decimalPlaces:2 ]];
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Mexican Peso(s)"
+                                                             alphaCode:@"MXN"
+                                                                symbol:@"₱"
+                                                         decimalPlaces:2 ]];
+    [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Yuan"
+                                                             alphaCode:@"CNY"
+                                                                symbol:@"¥"
                                                          decimalPlaces:2 ]];
   }
   return (NSArray*)_secretListOfCurrencies;
