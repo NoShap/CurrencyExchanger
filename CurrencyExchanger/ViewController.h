@@ -13,7 +13,7 @@
 
 
 @property (strong, nonatomic) NSArray* pickerViewData;
-
+@property (strong, nonatomic) ExchangeRate* currentExchangeRate;
 
 @property (weak, nonatomic) IBOutlet UITextField *homeCurrencyField;
 

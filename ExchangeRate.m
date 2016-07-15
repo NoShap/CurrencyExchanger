@@ -30,6 +30,7 @@
     self.foreign = aForeign;
     self.completionHandlerDictionary = [NSMutableDictionary dictionaryWithCapacity:0];
     self.ephemeralConfigObject = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    self.expiresOn = [NSDate date];
   [self fetch];
   }
   return self;
@@ -44,31 +45,32 @@
 -(NSURL*) exchangeRateURL
 {
   
-  NSString* urlString = [NSString stringWithFormat:@"https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22%@%@%22)&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys", self.home.alphaCode, self.foreign.alphaCode];
+  NSString* urlString = [NSString stringWithFormat:@"https://query.yahooapis.com/v1/public/yql?q=select%%20*%%20from%%20yahoo.finance.xchange%%20where%%20pair%%20in%%20(%%22%@%@%%22)&format=json&env=store%%3A%%2F%%2Fdatatables.org%%2Falltableswithkeys&callback=", self.home.alphaCode, self.foreign.alphaCode];
   NSURL* url = [NSURL URLWithString: urlString];
+  NSLog(@"Here is my url: %@", urlString);
   return url;
 }
 
 
--(NSString*) exchangeToHome: (NSNumber*) value
+-(NSString*) exchangeToHome: (float) value
 {
-  int rate = [self.theRate intValue];
-  int val = [value intValue];
-  int result = val / rate;
-  NSString* exchangedCurrency = [NSString stringWithFormat:@"%i",result];
+  float rate = self.theRate.floatValue;
+  float result = value * rate ;
+  NSString* exchangedCurrency = [self.foreign format: @(result)];
   return exchangedCurrency;
-  return @"";
 }
 
 
--(NSString*) exchangeToForeign: (NSNumber*) value
+-(NSString*) exchangeToForeign: (float) value
 {
-  //WHY DO WE USE NSNUMBERS IF THEY ARE THE WORST THINGS IN EXISTENCE
- int rate = [self.theRate intValue];
- int val = [value intValue];
- int result = val * rate ;
- NSString* exchangedCurrency = [NSString stringWithFormat:@"%i",result];
+  
+  float rate = self.theRate.floatValue;
+  float result = value / rate ;
+  NSString* exchangedCurrency = [self.foreign format: @(result)];
+  NSLog(@"value is:%g rate is:%g the string is: %@", value, rate, exchangedCurrency);
   return exchangedCurrency;
+
+ 
 }
 
 
@@ -101,11 +103,16 @@
                                                                                            error: nil];
                                                 if([obj isKindOfClass: [NSDictionary class]] ){
                                                   NSDictionary* dict = (NSDictionary*)obj;
-                                                  NSLog(@"%@", [dict description]);
-                                                  NSDictionary* results = [dict objectForKey:@"results"];
+                                                  //NSLog(@"%@", [dict description]);
+                                                  NSDictionary* query = [dict objectForKey:@"query"];
+                                                  NSDictionary* results = [query objectForKey:@"results"];
+                                                  //NSLog(@"The results dictionary is %@", results);
                                                   NSDictionary* rate = [results objectForKey:@"rate"];
+                                                  //NSLog(@"The rate dictionary is %@", rate);
                                                   NSString* theExchangeRate = [rate objectForKey:@"Rate"];
+                                                  //NSLog(@"the exchange rate %@", theExchangeRate);
                                                   self.theRate = @(theExchangeRate.floatValue);
+                                                  //NSLog(@"The rate is: %@", self.theRate);
                                                 }else{
                                                   NSLog(@"Not a dictionary.");
                                                   exit(1);

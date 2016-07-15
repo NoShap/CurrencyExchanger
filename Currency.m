@@ -34,9 +34,9 @@ NSMutableArray* _secretListOfCurrencies;
     self.symbol = aSymbol;
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.maximumFractionDigits = places;
-    [self.formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
-    [self.formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
-    self.formatter.currencySymbol = [NSString stringWithFormat: @"%@", self.symbol];
+    self.formatter.roundingMode = kCFNumberFormatterRoundHalfUp;
+    self.formatter.numberStyle = kCFNumberFormatterCurrencyStyle;
+    self.formatter.currencySymbol = self.symbol;
     //currency style?
   }
   return self;
@@ -47,6 +47,7 @@ NSMutableArray* _secretListOfCurrencies;
 {
   
   NSString* formattedNumber = [self.formatter stringFromNumber: quantity];
+  NSLog(@"quantity: %@ formattedNumber: %@", quantity, formattedNumber);
   return formattedNumber;
   
 }
@@ -65,7 +66,7 @@ NSMutableArray* _secretListOfCurrencies;
                                                          decimalPlaces:0 ]];
     [_secretListOfCurrencies addObject: [[Currency alloc] initWithName:@"Euro"
                                                              alphaCode:@"EUR"
-                                                                symbol:@"$"
+                                                                symbol:@"€"
                                                          decimalPlaces:2 ]];
   }
   return (NSArray*)_secretListOfCurrencies;

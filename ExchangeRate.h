@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) Currency* foreign;
 
-@property (assign, nonatomic) NSNumber* theRate;
+@property (strong, nonatomic) NSNumber* theRate;
 
 //need to assign if not using a pointer* such as when making a float
 //still must synthesize
@@ -27,9 +27,9 @@
 
 -(bool) updateRate;
 
--(NSString*) exchangeToHome: (NSNumber*) value;
+-(NSString*) exchangeToHome: (float) value;
 
--(NSString*) exchangeToForeign: (NSNumber*) value;
+-(NSString*) exchangeToForeign: (float) value;
 
 -(void) reverse;
 

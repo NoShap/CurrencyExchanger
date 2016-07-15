@@ -9,25 +9,12 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-//{
-//  //Currencies
-//  Currency *JPY;
-//  Currency *USD;
-//  Currency *EUR;
-//  Currency *AUD;
-//  Currency *RMB;
-//  
-//  
-//  
-//  //Exchange Rates
-//  ExchangeRate *usdAndEur;
-//  ExchangeRate *usdAndAud;
-//  ExchangeRate *s;
-//  
-//}
+
 @end
 
 @implementation ViewController
+@synthesize pickerViewData;
+@synthesize currentExchangeRate;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -70,24 +57,36 @@
   return c.name;
 }
 
-
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component
+{
+  self.currentExchangeRate = [[ExchangeRate alloc] initWithHome: [self.pickerViewData objectAtIndex:[self.homeCurrencyPicker selectedRowInComponent:0]]
+                                                             foreign: [self.pickerViewData objectAtIndex:[self.foreignCurrencyPicker selectedRowInComponent:0]]];
+  
+  NSLog(@"your Exchange Rate is: %@", self.currentExchangeRate.name);
+}
 
 - (IBAction)exchangeButton:(id)sender
 {
+  /*
+  ExchangeRate* test = [[ExchangeRate alloc] initWithHome: [self.pickerViewData objectAtIndex:0]                                                  foreign: [self.pickerViewData objectAtIndex:1]];
+  NSString *exampleText = [test exchangeToHome:100];
+  */
   
-  ExchangeRate *newExchangeRate = [[ExchangeRate alloc] initWithHome: self.pickerViewData[[self.homeCurrencyPicker selectedRowInComponent:1]]
-foreign:self.pickerViewData[[self.foreignCurrencyPicker selectedRowInComponent:1]]];
-  
-  NSLog(@"your Exchange Rate is: %@", newExchangeRate.theRate);
+  float homeVal = self.homeCurrencyField.text.floatValue;
+  NSString* foreignCurrencyText  = [self.currentExchangeRate exchangeToHome:homeVal];
+  self.foreignCurrencylabel.text = foreignCurrencyText;
+  NSLog(@"The Exchange Button Works;");
+  NSLog(@"foreign currency text %@", foreignCurrencyText);
 
-  
-  
- // self.foreignCurrencylabel.text =
-  
-  
 }
 
-
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+  NSLog(@"Touches Began!");
+  [self.homeCurrencyField resignFirstResponder];
+}
 
 
 @end
